@@ -14,7 +14,7 @@ public class JenkinsService {
     }
 
     public RequestStatus createJob(String name, String xml) {
-
+        jenkinsClient.api().jobsApi().delete(null, name);
         return jenkinsClient.api().jobsApi().create(null, name, xml);
     }
 
